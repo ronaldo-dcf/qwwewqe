@@ -1,0 +1,170 @@
+drop table producto;
+drop table pc;
+drop table lapton;
+drop table impresora;
+
+create table producto(
+fabricante varchar2(100),
+modelo varchar2(100),
+tipo varchar2(100),
+primary key(modelo)
+);
+
+ALTER TABLE pc
+    ADD CONSTRAINT pc_producto_fk FOREIGN KEY ( modelo )
+        REFERENCES producto ( modelo );
+
+ALTER TABLE lapton
+    ADD CONSTRAINT lapton_producto_fk FOREIGN KEY ( modelo )
+        REFERENCES producto ( modelo );
+        
+ALTER TABLE impresora
+    ADD CONSTRAINT impresora_producto_fk FOREIGN KEY ( modelo )
+        REFERENCES producto ( modelo );
+
+create table pc(
+codigo char(4),
+modelo varchar2(100),
+velocidad decimal(10,2),
+ram integer,
+hd integer,
+cd varchar2(50),
+precio integer,
+primary key (codigo)
+);
+
+create table lapton(
+codigo char(4),
+modelo varchar2(100),
+velocidad decimal(10,2),
+ram integer,
+hd integer,
+pantalla integer,
+precio integer,
+primary key(codigo)
+);
+
+
+create table impresora(
+codigo char(4),
+modelo varchar2(100),
+color char(1),
+tipo varchar2(100),
+precio integer,
+primary key(codigo)
+);
+delete producto;
+insert into producto (fabricante, modelo, tipo)
+values('HP','15-dw10851a','LAPTOP');
+insert into producto (fabricante, modelo, tipo)
+values('HP','ZBook Firefly 15 G7','LAPTOP');
+insert into producto (fabricante, modelo, tipo)
+values('ASUS','TM420IA-EC119T R5', 'LAPTOP');
+insert into producto (fabricante, modelo, tipo)
+values('ASUS','ZENBOOK 14 UX425EA', 'LAPTOP');
+insert into producto (fabricante, modelo, tipo)
+values('HUAHUEI','MATEBOOK X PRO 13.9" I7', 'LAPTOP');
+insert into producto (fabricante, modelo, tipo)
+values('LENOVO','YOGA SLIM 7I 14" CORE I7', 'LAPTOP');
+insert into producto (fabricante, modelo, tipo)
+values('HP','Desktop HP OMEN 30L GT13-0001la', 'PC');
+insert into producto (fabricante, modelo, tipo)
+values('HP','Desktop HP Slim S01-pF100bla', 'PC');
+insert into producto (fabricante, modelo, tipo)
+values('LENOVO','ALL IN ONE 1deaCentre A340', 'PC');
+insert into producto (fabricante, modelo, tipo)
+values('ACER','ALL IN ONE ACER ASPIRINE C24-963-UA91', 'PC');
+insert into producto (fabricante, modelo, tipo)
+values('LG','LG ALL IN ONE 22V280 INTEL CLERON 500GB 4GB', 'PC');
+insert into producto (fabricante, modelo, tipo)
+values('APLE','IMAC 27" SK/INTEL CORE 15 3.3GHZ/8GB RAM/512GB', 'PC');
+insert into producto (fabricante, modelo, tipo)
+values('LENOVO','ALL IN ON IDEACENTRE 3I 23.8" CORE I3 1TB+128GB 4GB', 'PC');
+insert into producto (fabricante, modelo, tipo)
+values('HP','HP Neverstop Laser 1000w', 'IMPRESORA');
+insert into producto (fabricante, modelo, tipo)
+values('HP','LASERJET PRO M428FDW - BLANCO', 'IMPRESORA');
+insert into producto (fabricante, modelo, tipo)
+values('CANNON','PIXMA G5010', 'IMPRESORA');
+insert into producto (fabricante, modelo, tipo)
+values('EPSON','ECOTANK L3110', 'IMPRESORA');
+insert into producto (fabricante, modelo, tipo)
+values('EPSON','ECOTANK L3150', 'IMPRESORA');
+insert into producto (fabricante, modelo, tipo)
+values('EPSON','ECOTANK L4160 WI-FI', 'IMPRESORA');
+insert into producto (fabricante, modelo, tipo)
+values('HP','HP INT TANK WIRILESS 415', 'IMPRESORA');
+insert into producto (fabricante, modelo, tipo)
+values('BROTHER','DCPT520W', 'IMPRESORA');
+insert into producto (fabricante, modelo, tipo)
+values('BROTHER','DCPT520DW', 'IMPRESORA');
+insert into producto (fabricante, modelo, tipo)
+values('XEROX','B215V_VNIP', 'IMPRESORA');
+insert into producto (fabricante, modelo, tipo)
+values('XEROX','PHASER 3330-GRIS', 'IMPRESORA');
+insert into producto (fabricante, modelo, tipo)
+values('XEROX','XEROX MULLTIFUNCION B405-GRIS', 'IMPRESORA');
+insert into producto (fabricante, modelo, tipo)
+values('ACER','ACER NITRO 5 AN515-55-77QB 15.6" CORE I7', 'LAPTON');
+insert into producto (fabricante, modelo, tipo)
+values('HP','HP 205 G4 ALL IN ONE AMD RYZEN3', 'PC');
+
+delete pc;
+insert into pc (codigo, modelo, velocidad,ram,hd,cd,precio)
+values('3001','Desktop HP OMEN 30L GT13-0001la',4.8,16,1000,'48x',6999);
+insert into pc (codigo, modelo, velocidad,ram,hd,cd,precio)
+values('3002','Desktop HP Slim S01-pF100bla',4.3,4,1000,'GRABADOR DVD',2199);
+insert into pc (codigo, modelo, velocidad,ram,hd,cd,precio)
+values('3003','ALL IN ONE 1deaCentre A340',1.6,4,1000,'GRABADOR DVD',2899);
+insert into pc (codigo, modelo, velocidad,ram,hd,cd,precio)
+values('3004','ALL IN ONE ACER ASPIRINE C24-963-UA91',1.6,4,512,'NO',3666);
+insert into pc (codigo, modelo, velocidad,ram,hd,cd,precio)
+values('3005','LG ALL IN ONE 22V280 INTEL CLERON 500GB 4GB',1.4,4,500,'NO',1299);
+insert into pc (codigo, modelo, velocidad,ram,hd,cd,precio)
+values('3006','IMAC 27" SK/INTEL CORE 15 3.3GHZ/8GB RAM/512GB',3.3,8,512,'NO',11199);
+insert into pc (codigo, modelo, velocidad,ram,hd,cd,precio)
+values('3007','ALL IN ON IDEACENTRE 3I 23.8" CORE I3 1TB+128GB 4GB',3,4,10524,'NO',2489);
+insert into pc (codigo, modelo, velocidad,ram,hd,cd,precio)
+values('3008','HP 205 G4 ALL IN ONE AMD RYZEN3',2.6,8,10524,'NO',1869);
+
+delete lapton;
+insert into lapton(codigo, modelo, velocidad, ram,hd,pantalla,precio)
+values('1001','15-dw10851a',2.1,4,256,15,1999);
+insert into lapton(codigo, modelo, velocidad, ram,hd,pantalla,precio)
+values('1002','ZBook Firefly 15 G7',4.9,16,512,15,7169);
+insert into lapton(codigo, modelo, velocidad, ram,hd,pantalla,precio)
+values('1003','TM420IA-EC119T R5',2.3,8,512,14,2699);
+insert into lapton(codigo, modelo, velocidad, ram,hd,pantalla,precio)
+values('1004','ZENBOOK 14 UX425EA',2.4,8,512,14,3599);
+insert into lapton(codigo, modelo, velocidad, ram,hd,pantalla,precio)
+values('1005','MATEBOOK X PRO 13.9" I7',1.8,16,1024,14,6699);
+insert into lapton(codigo, modelo, velocidad, ram,hd,pantalla,precio)
+values('1006','YOGA SLIM 7I 14" CORE I7',2.8,16,512,14,4399);
+insert into lapton(codigo, modelo, velocidad, ram,hd,pantalla,precio)
+values('1007','ACER NITRO 5 AN515-55-77QB 15.6" CORE I7',2.6,16,1024,15,4699);
+
+delete impresora;
+insert into impresora(codigo, modelo,color,tipo,precio)
+values('2001','HP Neverstop Laser 1000w','M','LASER',984);
+insert into impresora(codigo, modelo,color,tipo,precio)
+values('2002','LASERJET PRO M428FDW - BLANCO','M','LASER',1799);
+insert into impresora(codigo, modelo,color,tipo,precio)
+values('2003','PIXMA G5010','C','TINTA',500);
+insert into impresora(codigo, modelo,color,tipo,precio)
+values('2004','ECOTANK L3110','C','TINTA',649);
+insert into impresora(codigo, modelo,color,tipo,precio)
+values('2005','ECOTANK L3150','C','TINTA',749);
+insert into impresora(codigo, modelo,color,tipo,precio)
+values('2006','ECOTANK L4160 WI-FI','C','TINTA',1150);
+insert into impresora(codigo, modelo,color,tipo,precio)
+values('2007','HP INT TANK WIRILESS 415','C','TINTA',723);
+insert into impresora(codigo, modelo,color,tipo,precio)
+values('2008','DCPT520W','C','TINTA',699);
+insert into impresora(codigo, modelo,color,tipo,precio)
+values('2009','DCPT520DW','C','TINTA',849);
+insert into impresora(codigo, modelo,color,tipo,precio)
+values('2010','B215V_VNIP','C','LASER',1000);
+insert into impresora(codigo, modelo,color,tipo,precio)
+values('2011','PHASER 3330-GRIS','M','LASER',1125);
+insert into impresora(codigo, modelo,color,tipo,precio)
+values('2012','XEROX MULLTIFUNCION B405-GRIS','M','LASER',2630);
