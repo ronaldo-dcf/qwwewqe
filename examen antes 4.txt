@@ -1,0 +1,98 @@
+drop table producto;
+drop table pc;
+drop table lapton;
+drop table impresora;
+
+create table producto(
+fabricante varchar2(100),
+modelo varchar2(100),
+tipo varchar2(100),
+primary key(modelo)
+);
+
+ALTER TABLE pc
+    ADD CONSTRAINT pc_producto_fk FOREIGN KEY ( modelo )
+        REFERENCES producto ( modelo );
+
+ALTER TABLE lapton
+    ADD CONSTRAINT lapton_producto_fk FOREIGN KEY ( modelo )
+        REFERENCES producto ( modelo );
+        
+ALTER TABLE impresora
+    ADD CONSTRAINT impresora_producto_fk FOREIGN KEY ( modelo )
+        REFERENCES producto ( modelo );
+
+create table pc(
+codigo char(4),
+modelo varchar2(100),
+velocidad decimal(10,2),
+ram integer,
+hd integer,
+cd varchar2(50),
+precio integer,
+primary key (codigo)
+);
+
+create table lapton(
+codigo char(4),
+modelo varchar2(100),
+velocidad decimal(10,2),
+ram integer,
+hd integer,
+pantalla integer,
+precio integer,
+primary key(codigo)
+);
+
+
+create table impresora(
+codigo char(4),
+modelo varchar2(100),
+color char(1),
+tipo varchar2(100),
+precio integer,
+primary key(codigo)
+);
+insert into producto (fabricante, modelo, tipo)
+values('HP','15-dw1085la','15-dw1085la','LAPTOP');
+insert into producto (fabricante, modelo, tipo)
+values('HP','ZBook Firefly 15 G7','LAPTOP');
+insert into producto (fabricante, modelo, tipo)
+values('ASUS','TM420IA-EC119T R5', 'LAPTOP');
+insert into producto (fabricante, modelo, tipo)
+values('ASUS','ZENBOOK 14 UX425EA', 'LAPTOP');
+insert into producto (fabricante, modelo, tipo)
+values('HUAHUEI','MATEBOOK X PRO 13.9" I7', 'LAPTOP');
+insert into producto (fabricante, modelo, tipo)
+values('LENOVO','YOGA SLIM 7I 14" CORE I7', 'LAPTOP');
+insert into producto (fabricante, modelo, tipo)
+values('HP','Desktop HP OMEN 30L GT13-0001la', 'PC');
+insert into producto (fabricante, modelo, tipo)
+values('HP','Desktop HP Slim S01-pF100bla', 'PC');
+
+insert into producto (fabricante, modelo, tipo)
+values('LENOVO','ALL IN ONE 1deaCentre A340', 'PC');
+
+insert into producto (fabricante, modelo, tipo)
+values('ACER','ALL IN ONE 1deaCentre A340', 'PC');
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+insert into producto (fabricante, modelo, tipo)
+
+insert into pc (codigo, modelo, velociadad,ram,hd,cd,precio)
+insert into lapton(coidgo, modelo, velocidad, ram,hd,pantalla,precio)
+insert into impresora(codigo, modelo,color,tipo,precio)
